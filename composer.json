@@ -1,0 +1,16 @@
+{
+  "name": "rbessarab/328/finalProject",
+  "authors": [
+    {
+      "name": "Ruslan Bessarab",
+      "email": "rbessarab@greenriver.edu"
+    },
+    {
+      "name": "Nematu",
+      "email": "something@greenriver.edu"
+    }
+  ],
+  "require": {
+    "bcosca/fatfree-core": "dev-master"
+  }
+}
