@@ -7,27 +7,75 @@
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/home_styles.css">
     <title>Captured Moments</title>
 </head>
 <body>
-    <!--NavBar-->
-    <nav class="navbar justify-content-center navbar-expand-lg navbar-light bg-light">
-        <ul class="nav">
-            <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="#">Active</a>
+<!--NavBar-->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
+                <a class="nav-link" href="#">About</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
+                <a class="nav-link" href="#">Packages</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                <a class="nav-link" href="#">Gallery</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Connect</a>
             </li>
         </ul>
-    </nav>
+    </div>
+</nav>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+<!--Main Image-->
+<div class="main-image">
+    <h2 class="main-text">
+        Captured Moments <br>
+        - photography -
+    </h2>
+</div>
+
+<!--About Me-->
+<div class="row">
+    <!--Image-->
+    <div class="col-6">
+        <img class="img-fluid" src="images/me.jpeg" alt="me">
+    </div>
+    <!--Text-->
+    <div class="col-6">
+        <div class="container text-center header">
+            <h4><strong>About Me</strong></h4>
+        </div>
+        <div class="container text">
+            <p class="about-me">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec justo ipsum,
+                consequat sit amet malesuada eget, consequat vulputate magna. Donec auctor porttitor
+                tincidunt. Integer nec dolor quis justo sagittis consequat. Mauris at commodo ante.
+                Mauris rutrum dolor nec mi venenatis accumsan. Phasellus a lectus id tellus maximus
+                posuere sit amet sit amet risus. Cras iaculis imperdiet est, eu facilisis risus fermentum
+                sit amet. Suspendisse rutrum sapien molestie, hendrerit purus at, ullamcorper urna.
+                Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis
+                egestas. Nullam rhoncus faucibus justo, non viverra elit convallis at. Curabitur laoreet
+                enim orci, sed vulputate lacus congue eget. Curabitur gravida pellentesque dolor sed
+                vehicula. Mauris nec vehicula ex.
+            </p>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
 </body>
 </html>
