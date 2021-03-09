@@ -16,7 +16,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#home">Moment Photography</a>
+            <a class="navbar-brand" href="#home">Captured Moments</a>
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav navbar-right">
@@ -41,8 +41,8 @@
         just the beads of colour. Photography can capture someone’s heart and soul.
         Even the simplest photo has a story that tails along with it.
         It is an escape from the real world; a creation that narrows on one particular subject
-        and carefully details their every move and emotion. given this<Strong>Moment Photography</Strong>
-    was establish by group of student with the mission to keep families and friends connected with
+        and carefully details their every move and emotion. given this <Strong>Captured Moments Photography</Strong>
+     was establish by group of student with the mission to keep families and friends connected with
     their beautiful memories from the past</p>
     <br>
 </div>
@@ -60,23 +60,30 @@
                     <img src="images/christmas.jpg" alt="Basics">
                     <p class="pack-title"><strong>Christmas Package</strong></p>
                     <p class="pack-text">Limited up to 500 pieces</p>
-                    <button class="btn" >Sign up</button>
+                    <button class="btn" >Learn More</button>
                 </div>
             </div>
             <div class="col-sm-4">
                 <div class="thumbnail">
                     <img src="images/wedding.jpg" alt="Premium" >
                     <p class="pack-title"><strong>Wedding Package</strong></p>
-                    <p class="pack-text">$50/month...</p>
-                    <button class="btn"  >Sign up</button>
+                    <p class="pack-text">
+                        - Bronze<br>
+                        - Silver<br>
+                        - Gold <br>
+                    </p>
+                    <button class="btn"  >Learn More</button>
                 </div>
             </div>
             <div class="col-sm-4">
                 <div class="thumbnail">
                     <img src="images/family.jpg" alt="Golden" >
                     <p class="pack-title"><strong>Family Package</strong></p>
-                    <p class="pack-text">$100/month</p>
-                    <button class="btn" >Sign up</button>
+                    <p class="pack-text">
+                        - Up to 2 hours <br>
+                        - Up to 15 people
+                    </p>
+                    <button class="btn" >Learn More</button>
                 </div>
             </div>
 
@@ -86,32 +93,40 @@
 
 <!-- Container (Contact Section) -->
 <div id="contact" class="container">
-    <h3 class="text-center">Contact</h3>
+    <h3 class="text-center">Contact & Feedback</h3>
     <p class="text-center"><em>We love our fans!</em></p>
 
     <div class="row">
         <div class="col-md-4">
-            <p>Fan? Drop a note.</p>
+            <p>Fan? Drop a note</p>
             <p><span class="glyphicon glyphicon-map-marker"></span>Washington, US</p>
             <p><span class="glyphicon glyphicon-phone"></span>Phone: +206-666-6666</p>
             <p><span class="glyphicon glyphicon-envelope"></span>Email: nayaz@mail.greenriver.edu</p>
         </div>
         <div class="col-md-8">
-            <div class="row">
-                <div class="col-sm-6 form-group">
-                    <input class="form-control" id="name" name="name" placeholder="Name" >
+            <form action="#" method="post">
+                <div class="row">
+                    <div class="col-sm-6 form-group">
+                        <input class="form-control" id="name" name="name" placeholder="Name">
+                        <check if="{{ isset(@errors['name']) }}">
+                            {{ @errors['name'] }}
+                        </check>
+                    </div>
+                    <div class="col-sm-6 form-group">
+                        <input class="form-control" id="email" name="email" placeholder="Email">
+                        <check if="{{ isset(@errors['email']) }}">
+                            {{ @errors['email'] }}
+                        </check>
+                    </div>
                 </div>
-                <div class="col-sm-6 form-group">
-                    <input class="form-control" id="email" name="email" placeholder="Email" d>
+                <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea>
+                <br>
+                <div class="row">
+                    <div class="col-md-12 form-group">
+                        <button class="btn pull-right" type="submit">Send</button>
+                    </div>
                 </div>
-            </div>
-            <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea>
-            <br>
-            <div class="row">
-                <div class="col-md-12 form-group">
-                    <button class="btn pull-right" type="submit">Send</button>
-                </div>
-            </div>
+            </form>
         </div>
     </div>
 </div>
