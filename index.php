@@ -1,74 +1,64 @@
 <?php
-/** Create a food order form */
+/*
+ * authors: Ruslan Bessarab, Nematu Ayaz
+ * index.php
+ */
 
-//Turn on error reporting
+//error reporting
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
 
-//Start a session
-session_start();
-
-//Require autoload file
 require_once('vendor/autoload.php');
+require('model/validation.php');
 
-//Instantiate Fat-Free
+//instance of the base class
 $f3 = Base::instance();
-
-//Turn on Fat-Free error reporting
 $f3->set('DEBUG', 3);
 
-//Define a default route
-$f3->route('GET /', function()
-{
+//default route (home page)
+$f3->route('GET|POST /', function ($f3) {
+    if($_SERVER['REQUEST_METHOD'] == 'POST') {
+        $name = $_POST['name'];
+        $email = $_POST['email'];
+
+        if(validName($name)) {
+            $_SESSION['name'] = $name;
+        }
+        else {
+            $f3->set('errors["name"]', "Please provide your name");
+        }
+
+        if(validEmail($email)) {
+            $_SESSION['email'] = $email;
+        }
+        else {
+            $f3->set('errors["email"]', "Please provide your email");
+        }
+
+        if(empty($f3->get('errors'))) {
+            echo "Everything valid";
+        }
+    }
+
+    $view = new Template();
+    echo $view->render('views/home.html');
+
+});
+
+// Packages Route
+$f3->route('GET /packages', function() {
 
     //Display a view
     $view = new Template();
-    echo $view->render('views/home2.html');
+    echo $view->render('views/packages.html');
 });
 
 //Define an order route
-$f3->route('GET /order', function() {
+$f3->route('GET /connect', function() {
 
-    //Display a view
-    $view = new Template();
-    echo $view->render('views/survey.html');
+   //Display a view
+   $view = new Template();
+  echo $view->render('views/connect.html');
 });
 
-//Define an order2 route
-$f3->route('POST /order2', function() {
-
-    //Add data from form1 to Session array
-    //var_dump($_POST);
-    if(isset($_POST['food'])) {
-        $_SESSION['food'] = $_POST['food'];
-    }
-    if(isset($_POST['meal'])) {
-        $_SESSION['meal'] = $_POST['meal'];
-    }
-
-    //Display a view
-    $view = new Template();
-    echo $view->render('views/form1.html');
-});
-
-//Define a summary route
-$f3->route('POST /summary', function() {
-
-    //echo "<p>POST:</p>";
-    //var_dump($_POST);
-
-    //echo "<p>SESSION:</p>";
-    //var_dump($_SESSION);
-
-    //Add data from form2 to Session array
-    if(isset($_POST['conds'])) {
-        $_SESSION['conds'] = implode(", ", $_POST['conds']);
-    }
-
-    //Display a view
-    $view = new Template();
-    echo $view->render('views/summary.html');
-});
-
-//Run Fat-Free
 $f3->run();
