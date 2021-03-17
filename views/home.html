@@ -5,6 +5,8 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="styles/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <!--Body Section-->
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
@@ -16,117 +18,65 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#home">Captured Moments</a>
+            <a class="navbar-brand" href="#home">Moment Photography</a>
         </div>
+
+
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="#myPage">HOME</a></li>
-                <li><a href="#band">About</a></li>
-                <li><a href="#tour">Packages</a></li>
-                <li><a href="#contact">Gallery</a></li>
-                <li><a href="#Connect">Connect</a></li>
+                <li><a href="#home">HOME</a></li>
+                <li><a href="packages">Packages</a></li>
+                <li><a href="connect">Connect</a></li>
             </ul>
         </div>
     </div>
 </nav>
-    <div class="responsive" >
-        <img src="images/background_image.jpg" class="img-responsive" alt="loving fingers" >
+
+
+    <div class="responsive-fluid" >
+        <img src="images/background_image.jpg" class="img-responsive" alt="camera" ><br>
     </div>
 
-<div id="band" class="container text-center">
-    <h3>ABOUT US</h3>
-    <p><em>History!</em></p>
-    <p>The idea of colours floating across a sheet of paper forming either familiar shapes
-        or new creations is appealing to the eye. In reality, though it is much more than
-        just the beads of colour. Photography can capture someone’s heart and soul.
-        Even the simplest photo has a story that tails along with it.
-        It is an escape from the real world; a creation that narrows on one particular subject
-        and carefully details their every move and emotion. given this <Strong>Captured Moments Photography</Strong>
-     was establish by group of student with the mission to keep families and friends connected with
-    their beautiful memories from the past</p>
-    <br>
-</div>
-
-<!-- Package Section) -->
-<div id="tour" class="bg-1">
-    <div class="container">
-        <h3 class="text-center">PACKAGES CHOICE</h3>
-        <p class="text-center">Frame your memory with one of our special packages.<br> we highly appreciate your business with us</p>
-
-        <div class="img-responsive">
-
-            <div class="col-sm-4">
-                <div class="thumbnail">
-                    <img src="images/christmas.jpg" alt="Basics">
-                    <p class="pack-title"><strong>Christmas Package</strong></p>
-                    <p class="pack-text">Limited up to 500 pieces</p>
-                    <button class="btn" >Learn More</button>
-                </div>
-            </div>
-            <div class="col-sm-4">
-                <div class="thumbnail">
-                    <img src="images/wedding.jpg" alt="Premium" >
-                    <p class="pack-title"><strong>Wedding Package</strong></p>
-                    <p class="pack-text">
-                        - Bronze<br>
-                        - Silver<br>
-                        - Gold <br>
-                    </p>
-                    <button class="btn"  >Learn More</button>
-                </div>
-            </div>
-            <div class="col-sm-4">
-                <div class="thumbnail">
-                    <img src="images/family.jpg" alt="Golden" >
-                    <p class="pack-title"><strong>Family Package</strong></p>
-                    <p class="pack-text">
-                        - Up to 2 hours <br>
-                        - Up to 15 people
-                    </p>
-                    <button class="btn" >Learn More</button>
-                </div>
-            </div>
-
-        </div>
+    <div id="about" class="container text-center">
+        <h3>ABOUT US</h3>
+        <p>The idea of colours floating across a sheet of paper forming either familiar shapesmet
+            or new creations is appealing to the eye. In reality, though it is much more than
+            just the beads of colour. Photography can capture someone’s heart and soul.
+            Even the simplest photo has a story that tails along with it.
+            It is an escape from the real world; a creation that narrows on one particular subject
+            and carefully details their every move and emotion. given this <Strong>Moment Photography</Strong>
+            was establish by group of student with the mission to keep families and friends connected with
+            their beautiful memories from the past</p>
     </div>
-</div>
 
 <!-- Container (Contact Section) -->
 <div id="contact" class="container">
-    <h3 class="text-center">Contact & Feedback</h3>
+    <h3 class="text-center">Contact</h3>
     <p class="text-center"><em>We love our fans!</em></p>
 
     <div class="row">
         <div class="col-md-4">
-            <p>Fan? Drop a note</p>
+            <p>Fan? Drop a note.</p>
             <p><span class="glyphicon glyphicon-map-marker"></span>Washington, US</p>
             <p><span class="glyphicon glyphicon-phone"></span>Phone: +206-666-6666</p>
             <p><span class="glyphicon glyphicon-envelope"></span>Email: nayaz@mail.greenriver.edu</p>
         </div>
         <div class="col-md-8">
-            <form action="#" method="post">
-                <div class="row">
-                    <div class="col-sm-6 form-group">
-                        <input class="form-control" id="name" name="name" placeholder="Name">
-                        <check if="{{ isset(@errors['name']) }}">
-                            {{ @errors['name'] }}
-                        </check>
-                    </div>
-                    <div class="col-sm-6 form-group">
-                        <input class="form-control" id="email" name="email" placeholder="Email">
-                        <check if="{{ isset(@errors['email']) }}">
-                            {{ @errors['email'] }}
-                        </check>
-                    </div>
+            <div class="row">
+                <div class="col-sm-6 form-group">
+                    <input class="form-control" id="name" name="name" placeholder="Name" >
                 </div>
-                <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea>
-                <br>
-                <div class="row">
-                    <div class="col-md-12 form-group">
-                        <button class="btn pull-right" type="submit">Send</button>
-                    </div>
+                <div class="col-sm-6 form-group">
+                    <input class="form-control" id="email" name="email" placeholder="Email" d>
                 </div>
-            </form>
+            </div>
+            <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea>
+            <br>
+            <div class="row">
+                <div class="col-md-12 form-group">
+                    <button class="btn pull-right" type="submit">Send</button>
+                </div>
+            </div>
         </div>
     </div>
 </div>
