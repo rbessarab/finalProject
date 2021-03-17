@@ -1,12 +1,17 @@
 body {
     font: 400 15px/1.8 Lato, sans-serif;
-    color: #777;
+    color: black;
+    background-color: #b3ccff;
+}
+#contact{
+    background-color: #b3ccff;
 }
 h3, h4 {
     margin: 10px 0 30px 0;
     letter-spacing: 10px;
     font-size: 20px;
-    color: #001a33;
+
+    color: #790c0c;
 }
 
 .container {
@@ -21,10 +26,10 @@ h3, h4 {
 }
 
 .bg-1 {
-    background: #001a33;
-    color: #bdbdbd;
+    background: #b3ccff;
+    color: black;
 }
-.bg-1 h3 {color: #fff;}
+.bg-1 h3 {color: #790c0c }
 .bg-1 p {font-style: italic;}
 
 
@@ -45,6 +50,7 @@ h3, h4 {
     border-radius: 0;
     transition: .2s;
 }
+
 .btn:hover, .btn:focus {
     border: 1px solid #001a33;
     background-color: #fff;
@@ -84,6 +90,7 @@ h3, h4 {
 .dropdown-menu li a {
     color: #001a33 !important;
 }
+
 .glyphicon{
     color: #001a33;
 }
@@ -112,3 +119,12 @@ footer a:hover {
 textarea {
     resize: none;
 }
+.connect{
+    margin-top: 60px;
+    margin-bottom: 40px;
+}
+select {
+    width: 150px;
+    margin: 10px;
+}
+
