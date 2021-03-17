@@ -53,12 +53,20 @@ $f3->route('GET /packages', function() {
     echo $view->render('views/packages.html');
 });
 
+
 //Define an order route
 $f3->route('GET /connect', function() {
 
    //Display a view
    $view = new Template();
   echo $view->render('views/connect.html');
+});
+
+$f3->route('GET /home', function() {
+
+    //Display a view
+    $view = new Template();
+    echo $view->render('views/home.html');
 });
 
 $f3->run();
