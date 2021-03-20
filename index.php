@@ -15,58 +15,27 @@ require('model/validation.php');
 $f3 = Base::instance();
 $f3->set('DEBUG', 3);
 
+//instantiate needed classes
+$validator = new CapturedMomentsValidator();
+$controller = new CapturedMomentsController($f3);
+
 //default route (home page)
-$f3->route('GET|POST /', function ($f3) {
-    if($_SERVER['REQUEST_METHOD'] == 'POST') {
-        $name = $_POST['name'];
-        $email = $_POST['email'];
-
-        if(validName($name)) {
-            $_SESSION['name'] = $name;
-        }
-        else {
-            $f3->set('errors["name"]', "Please provide your name");
-        }
-
-        if(validEmail($email)) {
-            $_SESSION['email'] = $email;
-        }
-        else {
-            $f3->set('errors["email"]', "Please provide your email");
-        }
-
-        if(empty($f3->get('errors'))) {
-            echo "Everything valid";
-        }
-    }
-
-    $view = new Template();
-    echo $view->render('views/home.html');
-
+$f3->route('GET|POST /home', function ($f3) {
+    global $controller;
+    $controller->home();
 });
 
 // Packages Route
 $f3->route('GET /packages', function() {
-
-    //Display a view
-    $view = new Template();
-    echo $view->render('views/packages.html');
+    global $controller;
+    $controller->packages();
 });
 
 
 //Define an order route
 $f3->route('GET /connect', function() {
-
-   //Display a view
-   $view = new Template();
-  echo $view->render('views/connect.html');
-});
-
-$f3->route('GET /home', function() {
-
-    //Display a view
-    $view = new Template();
-    echo $view->render('views/home.html');
+    global $controller;
+    $controller->connect();
 });
 
 $f3->run();
