@@ -9,7 +9,6 @@ ini_set('display_errors', 1);
 error_reporting(E_ALL);
 
 require_once('vendor/autoload.php');
-require('model/validation.php');
 
 //instance of the base class
 $f3 = Base::instance();
@@ -33,9 +32,15 @@ $f3->route('GET /packages', function() {
 
 
 //Define an order route
-$f3->route('GET /connect', function() {
+$f3->route('GET|POST /connect', function() {
     global $controller;
     $controller->connect();
+});
+
+//Define a summary route
+$f3->route('GET /summary', function() {
+    global $controller;
+    $controller->summary();
 });
 
 $f3->run();

@@ -18,7 +18,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="home">Moment Photography</a>
+            <a class="navbar-brand" href="home">Capture Moments</a>
         </div>
 
 
@@ -44,13 +44,13 @@
             just the beads of colour. Photography can capture someone’s heart and soul.
             Even the simplest photo has a story that tails along with it.
             It is an escape from the real world; a creation that narrows on one particular subject
-            and carefully details their every move and emotion. given this <Strong>Moment Photography</Strong>
+            and carefully details their every move and emotion. given this <Strong>Captured Moments</Strong>
             was establish by group of student with the mission to keep families and friends connected with
             their beautiful memories from the past</p>
     </div>
 
 <!-- Container (Contact Section) -->
-<div id="contact" class="container">
+<form id="contact" class="container" method="post" action="#">
     <h3 class="text-center">Contact</h3>
     <p class="text-center"><em>We love our fans!</em></p>
 
@@ -65,12 +65,21 @@
             <div class="row">
                 <div class="col-sm-6 form-group">
                     <input class="form-control" id="name" name="name" placeholder="Name" >
+                    <check if="{{ isset(@errors['name']) }}">
+                        {{ @errors['name'] }}
+                    </check>
                 </div>
                 <div class="col-sm-6 form-group">
-                    <input class="form-control" id="email" name="email" placeholder="Email" d>
+                    <input class="form-control" id="email" name="email" placeholder="Email" >
+                    <check if="{{ isset(@errors['email']) }}">
+                        {{ @errors['email'] }}
+                    </check>
                 </div>
             </div>
             <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea>
+            <check if="{{ isset(@errors['comments']) }}">
+                {{ @errors['comments'] }}
+            </check>
             <br>
             <div class="row">
                 <div class="col-md-12 form-group">
@@ -79,7 +88,7 @@
             </div>
         </div>
     </div>
-</div>
+</form>
 
 <!-- Footer -->
 <footer class="text-center">
