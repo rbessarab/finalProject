@@ -21,7 +21,7 @@ class Customer
      * @param $_state
      * @param $_package
      */
-    public function __construct($_fname="null", $_lname="null", $_phone="null", $_email="null", $_state="null", $_package = null)
+    public function __construct($_fname="null", $_lname="null", $_phone="null", $_email="null", $_state="null", $_package = "null")
     {
         $this->_fname = $_fname;
         $this->_lname = $_lname;

@@ -37,6 +37,4 @@ class FamilyPackage extends Package
     {
         $this->_minutes = $minutes;
     }
-
-
 }

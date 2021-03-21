@@ -72,7 +72,7 @@ class CapturedMomentsController
             $state = $_POST['state'];
             $email = $_POST['email'];
             $package = $_POST['package'];
-            $_SESSION['customer'] = new Customer();
+            //$_SESSION['customer'] = new Customer();
 
             //package validation
             if($package == "none") {
@@ -88,7 +88,7 @@ class CapturedMomentsController
                     $_SESSION['package'] = new FamilyPackage();
                 }
                 //setting the package for a customer
-                $_SESSION['customer']->setPackage($_SESSION['package']);
+                //$_SESSION['customer']->setPackage($_SESSION['package']);
             }
 
             //first name validation
@@ -157,6 +157,7 @@ class CapturedMomentsController
     //wedding page
     function wedding()
     {
+        session_destroy();
         //Display a view
         $view = new Template();
         echo $view->render('views/wedding.html');
@@ -165,6 +166,7 @@ class CapturedMomentsController
     //family page
     function family()
     {
+        session_destroy();
         //Display a view
         $view = new Template();
         echo $view->render('views/family.html');
