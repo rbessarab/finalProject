@@ -72,46 +72,7 @@ class CapturedMomentsController
             $state = $_POST['state'];
             $email = $_POST['email'];
             $package = $_POST['package'];
-
-            //first name validation
-            if($validator->validName($fname)) {
-                $_SESSION['fname'] = $fname;
-            }
-            else {
-                $this->_f3->set('errors["fname"]', "Please provide your first name");
-            }
-
-            //last name validation
-            if($validator->validName($lname)) {
-                $_SESSION['lname'] = $lname;
-            }
-            else {
-                $this->_f3->set('errors["lname"]', "Please provide your last name");
-            }
-
-            //phone number validation
-            if($validator->validPhone($phone)) {
-                $_SESSION['phone'] = $phone;
-            }
-            else {
-                $this->_f3->set('errors["phone"]', "Please provide your phone number");
-            }
-
-            //state validation
-            if($validator->validState($state)) {
-                $_SESSION['state'] = $state;
-            }
-            else {
-                $this->_f3->set('errors["state"]', "Please provide your State");
-            }
-
-            //email validation
-            if($validator->validEmail($email)) {
-                $_SESSION['email'] = $email;
-            }
-            else {
-                $this->_f3->set('errors["email"]', "Please provide your email address");
-            }
+            $_SESSION['customer'] = new Customer();
 
             //package validation
             if($package == "none") {
@@ -126,6 +87,48 @@ class CapturedMomentsController
                 else {
                     $_SESSION['package'] = new FamilyPackage();
                 }
+                //setting the package for a customer
+                $_SESSION['customer']->setPackage($_SESSION['package']);
+            }
+
+            //first name validation
+            if($validator->validName($fname)) {
+                $_SESSION['customer']->setFname($fname);
+            }
+            else {
+                $this->_f3->set('errors["fname"]', "Please provide your first name");
+            }
+
+            //last name validation
+            if($validator->validName($lname)) {
+                $_SESSION['customer']->setLname($lname);
+            }
+            else {
+                $this->_f3->set('errors["lname"]', "Please provide your last name");
+            }
+
+            //phone number validation
+            if($validator->validPhone($phone)) {
+                $_SESSION['customer']->setPhone($phone);
+            }
+            else {
+                $this->_f3->set('errors["phone"]', "Please provide your phone number");
+            }
+
+            //state validation
+            if($validator->validState($state)) {
+                $_SESSION['customer']->setState($state);
+            }
+            else {
+                $this->_f3->set('errors["state"]', "Please provide your State");
+            }
+
+            //email validation
+            if($validator->validEmail($email)) {
+                $_SESSION['customer']->setEmail($email);
+            }
+            else {
+                $this->_f3->set('errors["email"]', "Please provide your email address");
             }
 
             //check for agreement
