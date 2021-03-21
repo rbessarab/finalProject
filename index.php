@@ -10,6 +10,9 @@ error_reporting(E_ALL);
 
 require_once('vendor/autoload.php');
 
+//session start
+session_start();
+
 //instance of the base class
 $f3 = Base::instance();
 $f3->set('DEBUG', 3);
@@ -37,10 +40,16 @@ $f3->route('GET|POST /connect', function() {
     $controller->connect();
 });
 
-//Define a summary route
-$f3->route('GET /summary', function() {
+//Define a wedding route
+$f3->route('GET|POST /wedding', function() {
     global $controller;
-    $controller->summary();
+    $controller->wedding();
+});
+
+//Define a family route
+$f3->route('GET|POST /family', function() {
+    global $controller;
+    $controller->family();
 });
 
 $f3->run();

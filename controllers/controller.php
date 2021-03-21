@@ -118,12 +118,31 @@ class CapturedMomentsController
                 $this->_f3->set('errors["package"]', "Please choose one of the packages");
             }
 
+            //if package is set, instantiate the appropriate package class
+            else {
+                if($package == "wedding") {
+                    $_SESSION['package'] = new WeddingPackage();
+                }
+                else {
+                    $_SESSION['package'] = new FamilyPackage();
+                }
+            }
+
+            //check for agreement
             if(!isset($_POST['mail'])) {
                 $this->_f3->set('errors["agree"]', "Please agree to our Terms and Conditions");
             }
 
+            //if no errors, we decide where to go next
             if(empty($this->_f3->get('errors'))) {
-                $this->_f3->reroute('summary');
+                //if the package is Wedding, we will reroute to the wedding page
+                if(is_a($_SESSION['package'], 'WeddingPackage')) {
+                    $this->_f3->reroute('wedding');
+                }
+                //otherwise go to the family package page
+                else {
+                    $this->_f3->reroute('family');
+                }
             }
         }
 
@@ -132,11 +151,19 @@ class CapturedMomentsController
         echo $view->render('views/connect.html');
     }
 
-    //summary page
-    function summary()
+    //wedding page
+    function wedding()
     {
         //Display a view
         $view = new Template();
-        echo $view->render('views/summary.html');
+        echo $view->render('views/wedding.html');
+    }
+
+    //family page
+    function family()
+    {
+        //Display a view
+        $view = new Template();
+        echo $view->render('views/family.html');
     }
 }
