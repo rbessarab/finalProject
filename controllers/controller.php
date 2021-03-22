@@ -171,4 +171,12 @@ class CapturedMomentsController
         $view = new Template();
         echo $view->render('views/family.html');
     }
+
+    // longin page
+    function login()
+    {
+        //Display a login view
+        $view = new Template();
+        echo $view->render('views/login.html');
+    }
 }
