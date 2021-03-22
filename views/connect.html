@@ -98,7 +98,6 @@
                         <label for="package">Packages: </label> <br>
                         <select class="form-control" id="package" name="package">
                             <option value="none">Select a package:</option>
-                            <option value="christmas">Christmas Package</option>
                             <option value="wedding">Wedding Package</option>
                             <option value="family">Family Package</option>
                         </select>
@@ -115,7 +114,7 @@
             </div><br>
             <div>
                 <input type="checkbox" id = "mail" name = "mail" >
-                <label > Agree to the term of agreements</label>
+                <label > &nbsp; I agree to the term of agreements</label>
                 <br>
                 <check if="{{ isset(@errors['agree']) }}">
                     {{ @errors['agree'] }}
@@ -134,7 +133,11 @@
     <a class="up-arrow" href="#myPage" data-toggle="tooltip" title="TO TOP">
         <span class="glyphicon glyphicon-chevron-up"></span>
     </a><br><br>
-    <p>connect with us on social media <a href="" > </a></p>
+    <div class="row">
+        <div class="col-md-12 copy">
+            <p class="text-center">&copy; Copyright 2021 - Capture Moments.  All rights reserved.</p>
+        </div>
+    </div>
 </footer>
 
 
