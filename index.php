@@ -22,9 +22,19 @@ $validator = new CapturedMomentsValidator();
 $controller = new CapturedMomentsController($f3);
 
 //default route (home page)
-$f3->route('GET|POST /home', function ($f3) {
+$f3->route('GET|POST /', function () {
     global $controller;
     $controller->home();
+});
+$f3->route('GET /home', function () {
+    global $controller;
+    $controller->home();
+});
+
+// login
+$f3->route('GET /login', function() {
+    global $controller;
+    $controller->login();
 });
 
 // Packages Route
