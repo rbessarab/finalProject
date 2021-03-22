@@ -105,9 +105,16 @@ footer {
     background-color: #001a33;
     color: #f5f5f5;
     padding: 32px;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
 }
+
 footer a {
     color: #f5f5f5;
+    float: right;
+    padding-right: 50px;
 }
 footer a:hover {
     color: #777;
@@ -127,4 +134,36 @@ select {
     width: 150px;
     margin: 10px;
 }
+#login{
+    margin-left: 1px;
+    margin-bottom: 350px;
+}
+/**
+// Wedding/family Forms
+ */
+.wed-form
+{
+    margin-top: 8%;
+    margin-bottom: 8%;
+}
+.family-form{
+    margin-top: 8%;
+    margin-bottom: 8%;
+}
+
+#location{
+    width: 500px;
+}
+#hours{
+    width: 500px;
+}
+#size{
+    width: 500px;
+}
+
+/* footer social icons */
+
+
+
+
 
