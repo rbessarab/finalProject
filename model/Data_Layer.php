@@ -45,7 +45,7 @@ class Data_Layer
      * Getting all customers from database
      */
     function getCustomers() {
-        $sql = "SELECT * FROM customer";
+        $sql = "SELECT * FROM customers";
 
         //prepare the statement
         $statement = $this->_dbh->prepare($sql);
@@ -61,8 +61,8 @@ class Data_Layer
      * JOIN query to see all needed data from both tables
      */
     function customerPackage() {
-        $sql = "SELECT customers.package_id, customers.customer_id, customers.phone, customers.fname, customers.lname, customers.state, packages.name
-                FROM packages INNER JOIN customers ON packages.package_id = customers.package_id";
+        $sql = "SELECT customers.package_id, customers.customer_id, customers.fname, customers.lname, customers.phone, customers.email, customers.state, packages.name
+            FROM packages INNER JOIN customers ON packages.package_id = customers.package_id";
 
         //Prepare the statement
         $statement = $this->_dbh->prepare($sql);

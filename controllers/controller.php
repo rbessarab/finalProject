@@ -212,11 +212,11 @@ class CapturedMomentsController
     {
         global $dataLayer;
 
-        $customers_table = $dataLayer->getCustomers();
-        $this->_f3->set('customer', $customers_table);
+        $customers_table = $dataLayer->customerPackage();
+        $this->_f3->set('customers', $customers_table);
 
         //Display a login view
         $view = new Template();
-        echo $view->render('views/admin.html');
+        echo $view->render('views/admin.php');
     }
 }

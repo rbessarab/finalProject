@@ -28,7 +28,7 @@ $f3->route('GET|POST /', function () {
     global $controller;
     $controller->home();
 });
-$f3->route('GET /home', function () {
+$f3->route('GET|POST /home', function () {
     global $controller;
     $controller->home();
 });
