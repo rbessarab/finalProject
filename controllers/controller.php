@@ -207,11 +207,16 @@ class CapturedMomentsController
         echo $view->render('views/summary.html');
     }
 
-    // longin page
-    function login()
+    // admin page
+    function admin()
     {
+        global $dataLayer;
+
+        $customers_table = $dataLayer->getCustomers();
+        $this->_f3->set('customer', $customers_table);
+
         //Display a login view
         $view = new Template();
-        echo $view->render('views/login.html');
+        echo $view->render('views/admin.html');
     }
 }
