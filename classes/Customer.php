@@ -11,24 +11,43 @@ class Customer
     private $_email;
     private $_state;
     private $_package_id;
+    private $_package_name;
 
     /**
      * Customer constructor.
-     * @param $_fname
-     * @param $_lname
-     * @param $_phone
-     * @param $_email
-     * @param $_state
-     * @param $_package
+     * @param string $_fname
+     * @param string $_lname
+     * @param string $_phone
+     * @param string $_email
+     * @param string $_state
+     * @param string $_package_id
+     * @param string $_package_name
      */
-    public function __construct($_fname="null", $_lname="null", $_phone="null", $_email="null", $_state="null", $_package = "null")
+    public function __construct($_fname="null", $_lname="null", $_phone="null", $_email="null", $_state="null", $_package_id = "null", $_package_name="null")
     {
         $this->_fname = $_fname;
         $this->_lname = $_lname;
         $this->_phone = $_phone;
         $this->_email = $_email;
         $this->_state = $_state;
-        $this->_package_id = $_package;
+        $this->_package_id = $_package_id;
+        $this->_package_name = $_package_name;
+    }
+
+    /**
+     * @return string
+     */
+    public function getPackageName()
+    {
+        return $this->_package_name;
+    }
+
+    /**
+     * @param string $package_name
+     */
+    public function setPackageName($package_name)
+    {
+        $this->_package_name = $package_name;
     }
 
     /**

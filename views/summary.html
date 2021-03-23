@@ -31,6 +31,24 @@
     </div>
 </nav>
 
+<!--Displaying all Customer's info-->
+<div class="container bg-warning "  ><br>
+    <fieldset class="border p-3">
+        <H3 class="text-center">Summary</H3>
+        <div class="container">
+            Name: {{ @SESSION.customer->getFname() }} {{ @SESSION.customer->getLname() }}<br>
+            Phone Number: {{ @SESSION.customer->getPhone() }}<br>
+            E-mail: {{ @SESSION.customer->getEmail() }}<br>
+            Location: {{ @SESSION.customer->getState() }}<br>
+            Package: {{ @SESSION.customer->getPackageName() }}<br>
+            <check if="{{ @SESSION.customer->getPackageName() == 'Family Package'}}">
+                Family Size: {{ @SESSION.package->getPeopleAmount() }} <br>
+                Hours: {{ @SESSION.package->getMinutes() }}
+            </check>
+        </div>
+    </fieldset>
+</div>
+
 <!-- Footer -->
 <footer class="text-center">
     <a class="up-arrow" href="#myPage" data-toggle="tooltip" title="TO TOP">

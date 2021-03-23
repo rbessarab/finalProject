@@ -84,10 +84,12 @@ class CapturedMomentsController
                 if($package == "wedding") {
                     $_SESSION['package'] = new WeddingPackage();
                     $_SESSION['customer']->setPackageId(1);
+                    $_SESSION['customer']->setPackageName("Wedding Package");
                 }
                 else {
                     $_SESSION['package'] = new FamilyPackage();
                     $_SESSION['customer']->setPackageId(2);
+                    $_SESSION['customer']->setPackageName("Family Package");
                 }
             }
 
