@@ -9,6 +9,7 @@ ini_set('display_errors', 1);
 error_reporting(E_ALL);
 
 require_once('vendor/autoload.php');
+require $_SERVER['DOCUMENT_ROOT'].'/../config.php';
 
 //session start
 session_start();
@@ -18,6 +19,7 @@ $f3 = Base::instance();
 $f3->set('DEBUG', 3);
 
 //instantiate needed classes
+$dataLayer = new Data_Layer($dbh);
 $validator = new CapturedMomentsValidator();
 $controller = new CapturedMomentsController($f3);
 
@@ -66,6 +68,7 @@ $f3->route('GET|POST /family', function() {
 $f3->route('POST|GET /summary', function() {
     global $controller;
     $controller->summary();
+    session_destroy();
 });
 
 $f3->run();

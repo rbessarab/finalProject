@@ -10,7 +10,7 @@ class Customer
     private $_phone;
     private $_email;
     private $_state;
-    private $_package;
+    private $_package_id;
 
     /**
      * Customer constructor.
@@ -28,7 +28,7 @@ class Customer
         $this->_phone = $_phone;
         $this->_email = $_email;
         $this->_state = $_state;
-        $this->_package = $_package;
+        $this->_package_id = $_package;
     }
 
     /**
@@ -112,18 +112,18 @@ class Customer
     }
 
     /**
-     * @return WeddingPackage|FamilyPackage
+     * @return int
      */
-    public function getPackage()
+    public function getPackageId()
     {
-        return $this->_package;
+        return $this->_package_id;
     }
 
     /**
-     * @param WeddingPackage|FamilyPackage $package
+     * @param $package_id
      */
-    public function setPackage($package)
+    public function setPackageId($package_id)
     {
-        $this->_package = $package;
+        $this->_package_id = $package_id;
     }
 }

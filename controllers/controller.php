@@ -83,12 +83,12 @@ class CapturedMomentsController
             else {
                 if($package == "wedding") {
                     $_SESSION['package'] = new WeddingPackage();
+                    $_SESSION['customer']->setPackageId(1);
                 }
                 else {
                     $_SESSION['package'] = new FamilyPackage();
+                    $_SESSION['customer']->setPackageId(2);
                 }
-                //setting the package for a customer
-                $_SESSION['customer']->setPackage($_SESSION['package']);
             }
 
             //first name validation
@@ -197,7 +197,9 @@ class CapturedMomentsController
     }
 
     function summary() {
-        session_destroy();
+        global $dataLayer;
+        $dataLayer->insertCustomer($_SESSION['customer']);
+
         //Display a view
         $view = new Template();
         echo $view->render('views/summary.html');
