@@ -33,12 +33,6 @@ $f3->route('GET /home', function () {
     $controller->home();
 });
 
-// login
-$f3->route('GET|POST /login', function() {
-    global $controller;
-    $controller->login();
-});
-
 // Packages Route
 $f3->route('GET /packages', function() {
     global $controller;
@@ -69,6 +63,12 @@ $f3->route('POST|GET /summary', function() {
     global $controller;
     $controller->summary();
     session_destroy();
+});
+
+// admin
+$f3->route('GET /admin', function() {
+    global $controller;
+    $controller->admin();
 });
 
 $f3->run();
