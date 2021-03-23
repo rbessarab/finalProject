@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Moment Photography</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<!--Body Section-->
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="home">Capture Moments</a>
+        </div>
+
+
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="home">HOME</a></li>
+                <li><a href="packages">Packages</a></li>
+                <li><a href="connect">Connect</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container pt-3">
+    <h2>Customer Report Summary</h2><br>
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Phone</th>
+            <th scope="col">Email</th>
+            <th scope="col">State</th>
+            <th scope="col">Package</th>
+            <th scope="col">Family Size</th>
+            <th scope="col">Hours</th>
+        </tr>
+        </thead>
+        <tbody>
+        <repeat group="{{ @customers }}" value="{{ @customer }}">
+            <tr>
+                <th scope="row" >{{ @customer['customer_id']}}</th>
+                <td class="text-info">{{ @customer['fname'] }} {{ @customer['lname'] }}</td>
+                <td class="text-info">{{ @customer['phone'] }}</td>
+                <td class="text-info">{{ @customer['email'] }}</td>
+                <td class="text-info">{{ @customer['state'] }}</td>
+                <td class="text-info">{{ @customer['package'] }}</td>
+                <td class="text-info">{{ @customer['size'] }}</td>
+                <td class="text-info">{{ @customer['hours'] }}</td>
+            </tr>
+        </repeat>
+        </tbody>
+    </table>
+</div>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
+
+
+</body>
+</html>
