@@ -23,8 +23,14 @@ class Data_Layer
      */
     function insertCustomer($customer) {
         //define the query
-        $sql = "INSERT INTO `customers`(`package_id`, `fname`, `lname`, `phone`, `email`, `state`) 
-                    VALUES (:package_id, :fname, :lname, :phone, :email, :state)";
+       $sql = "INSERT INTO `customers`(`package_id`, `fname`, `lname`, `phone`, `email`, `state`)
+                  VALUES (:package_id, :fname, :lname, :phone, :email, :state)";
+
+
+         //  $sql = "INSERT INTO customers(fname, lname, phone, email, state, package, fsize, hours)
+        // VALUES(:fname, :lname, :phone, :email, :state, :package, :size, :hours)";
+
+
 
         //Prepare the statement
         $statement = $this->_dbh->prepare($sql);
@@ -36,6 +42,10 @@ class Data_Layer
         $statement->bindParam(':phone', $customer->getPhone(), PDO::PARAM_STR);
         $statement->bindParam(':email', $customer->getEmail(), PDO::PARAM_STR);
         $statement->bindParam(':state', $customer->getState(), PDO::PARAM_STR);
+
+      // $statement->bindParam(':package', $customer->getPackage(), PDO::PARAM_STR);
+      //  $statement->bindParam(':size', $customer->getSize(), PDO::PARAM_STR);
+       // $statement->bindParam(':state', $customer->getHours(), PDO::PARAM_STR);
 
         //Execute
         $statement->execute();
