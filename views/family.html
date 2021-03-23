@@ -38,20 +38,22 @@
         <fieldset class="form-group border ">
             <H3 class="text-center">Family Order Form</H3><br>
             <div class="form-group col-md-6">
-                <label for="size">Number of people attending: </label>
+                <label for="size">Number of people attending: </label><br>
                 <input  type="text" id="size" name="size">
-                <span class="err" id="errsize"></span>
+                <check if="{{ isset(@errors['size']) }}">
+                    {{ @errors['size'] }}
+                </check>
             </div>
         </fieldset>
         <fieldset class="form-group border ">
             <div class="form-group col-md-6">
                 <label for="hours">How many hours would you like to book: </label>
                 <input  type="text" id="hours" name="hours">
-                <span class="err" id="errhours"></span>
+                <check if="{{ isset(@errors['hours']) }}">
+                    {{ @errors['hours'] }}
+                </check>
             </div>
         </fieldset>
-
-
 
         <!-- Submit Button-->
         <div class="text-right">

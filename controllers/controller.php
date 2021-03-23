@@ -157,7 +157,6 @@ class CapturedMomentsController
     //wedding page
     function wedding()
     {
-        session_destroy();
         //Display a view
         $view = new Template();
         echo $view->render('views/wedding.html');
@@ -166,10 +165,42 @@ class CapturedMomentsController
     //family page
     function family()
     {
-        session_destroy();
+        global $validator;
+
+        if($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $familySize = $_POST['size'];
+            $hours = $_POST['hours'];
+
+            if($validator->validSize($familySize)) {
+                $_SESSION['package']->setPeopleAmount($familySize);
+            }
+            else {
+                $this->_f3->set('errors["size"]', "Family size should be more then 1");
+            }
+
+            if($validator->validHours($hours)) {
+                $_SESSION['package']->setMinutes($hours);
+            }
+            else {
+                $this->_f3->set('errors["hours"]', "Please book no more than 4 hours");
+            }
+
+            //if no errors, we decide where to go next
+            if(empty($this->_f3->get('errors'))) {
+                $this->_f3->reroute('summary');
+            }
+        }
+
         //Display a view
         $view = new Template();
         echo $view->render('views/family.html');
+    }
+
+    function summary() {
+        session_destroy();
+        //Display a view
+        $view = new Template();
+        echo $view->render('views/summary.html');
     }
 
     // longin page

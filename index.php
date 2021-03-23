@@ -32,7 +32,7 @@ $f3->route('GET /home', function () {
 });
 
 // login
-$f3->route('GET /login', function() {
+$f3->route('GET|POST /login', function() {
     global $controller;
     $controller->login();
 });
@@ -60,6 +60,12 @@ $f3->route('GET|POST /wedding', function() {
 $f3->route('GET|POST /family', function() {
     global $controller;
     $controller->family();
+});
+
+//Define a summary route
+$f3->route('POST|GET /summary', function() {
+    global $controller;
+    $controller->summary();
 });
 
 $f3->run();

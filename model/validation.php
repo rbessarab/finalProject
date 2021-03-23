@@ -5,6 +5,27 @@
  */
 class CapturedMomentsValidator
 {
+
+    /**
+     * Checks if the hours given is greater than 1 and less than 4
+     * @param $hours
+     * @return bool
+     */
+    function validHours($hours)
+    {
+        return $hours >= 1 && $hours <= 4;
+    }
+
+    /**
+     * The size of the family should be more then 1
+     * @param $size of family
+     * @return bool
+     */
+    function validSize($size)
+    {
+        return $size > 1;
+    }
+
     /**
      * Checks if name is valid
      * @param $name
