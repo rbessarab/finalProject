@@ -26,12 +26,6 @@ class Data_Layer
        $sql = "INSERT INTO `customers`(`package_id`, `fname`, `lname`, `phone`, `email`, `state`)
                   VALUES (:package_id, :fname, :lname, :phone, :email, :state)";
 
-
-         //  $sql = "INSERT INTO customers(fname, lname, phone, email, state, package, fsize, hours)
-        // VALUES(:fname, :lname, :phone, :email, :state, :package, :size, :hours)";
-
-
-
         //Prepare the statement
         $statement = $this->_dbh->prepare($sql);
 
@@ -42,10 +36,6 @@ class Data_Layer
         $statement->bindParam(':phone', $customer->getPhone(), PDO::PARAM_STR);
         $statement->bindParam(':email', $customer->getEmail(), PDO::PARAM_STR);
         $statement->bindParam(':state', $customer->getState(), PDO::PARAM_STR);
-
-      // $statement->bindParam(':package', $customer->getPackage(), PDO::PARAM_STR);
-      //  $statement->bindParam(':size', $customer->getSize(), PDO::PARAM_STR);
-       // $statement->bindParam(':state', $customer->getHours(), PDO::PARAM_STR);
 
         //Execute
         $statement->execute();
@@ -61,6 +51,23 @@ class Data_Layer
         $statement = $this->_dbh->prepare($sql);
 
         //execute
+        $statement->execute();
+
+        //Get the results
+        return $statement->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    /**
+     * JOIN query to see all needed data from both tables
+     */
+    function customerPackage() {
+        $sql = "SELECT customers.package_id, customers.customer_id, customers.phone, customers.fname, customers.lname, customers.state, packages.name
+                FROM packages INNER JOIN customers ON packages.package_id = customers.package_id";
+
+        //Prepare the statement
+        $statement = $this->_dbh->prepare($sql);
+
+        //Execute
         $statement->execute();
 
         //Get the results
